@@ -1,9 +1,7 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
-		url = urlmapper.url
-		redirect_to url_redirect url
+		@urlmappers = Urlmapper.order(visit_count: :desc).limit(100)
 	end
 
 	def new
@@ -33,6 +31,12 @@ class UrlmappersController < ApplicationController
 			    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
 			end
 		end
+	end
+
+	def redirected_site
+		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
+		url = urlmapper.url
+		redirect_to url_redirect url
 	end
 
 	private

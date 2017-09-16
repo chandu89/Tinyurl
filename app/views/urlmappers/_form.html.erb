@@ -1,3 +1,4 @@
+
 <%= form_for(@urlmapper) do |f| %>
   <% if @urlmapper.errors.any? %>
     <div id="error_explanation">
@@ -11,10 +12,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field col-md-4">
     <%= f.text_field :url, :class=>"form-control" , placeholder: "Url"%>
   </div>
   <div class="actions">
     <%= f.submit class:"btn btn-info" %>
   </div>
+
 <% end %>

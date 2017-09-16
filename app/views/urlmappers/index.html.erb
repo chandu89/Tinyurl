@@ -1,2 +1,11 @@
-<h1>Urlmappers#index</h1>
-<p>Find me in app/views/urlmappers/index.html.erb</p>
+<div class="container">
+	<ul class="list-group col-md-10">
+		<%@urlmappers.each do |urlmapper|%>
+			  <li class="list-group-item">
+			  	<%= urlmapper.url%>
+			  	<span class="badge"><%= urlmapper.visit_count %></span>
+			  </li>
+		<%end%>
+	</ul>
+	<%= link_to 'Back', new_urlmapper_path %>
+</div>
