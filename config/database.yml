@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: Tinyurl_development
+
+test:
+  <<: *default
+  database: Tinyurl_test
+
+production:
+  <<: *default
+  database: Tinyurl_production
+  username: Tinyurl
+  password: <%= ENV['TINYURL_DATABASE_PASSWORD'] %>
