@@ -3,13 +3,14 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: postgres
+
 
 development:
   <<: *default
   database: Tinyurl_development
-
+  username: postgres
+  password: postgres
+  
 test:
   <<: *default
   database: Tinyurl_test

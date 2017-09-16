@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :host_uri
 
   def host_uri
-    Rails.env.production? ? 'http://www.herokuapp.com' : root_url
+    Rails.env.production? ? 'https://stormy-cove-10376.herokuapp.com/' : root_url
   end
 
 end
