@@ -1,7 +1,6 @@
 <p>
   <strong>Your Tiny url:</strong>
-
-  <%= @urlmapper.tinyurl %>
+  <%= host_uri+@urlmapper.tiny_url%>
 </p>
 
 <%= link_to 'Back', new_urlmapper_path %>

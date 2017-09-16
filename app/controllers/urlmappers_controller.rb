@@ -1,4 +1,5 @@
 class UrlmappersController < ApplicationController
+
 	def index
 		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
 		url = urlmapper.url
@@ -10,7 +11,7 @@ class UrlmappersController < ApplicationController
 	end
 
 	def show
-		@urlmapper = Urlmapper.find(params[:id])
+		@urlmapper = Urlmapper.find(params[:id]).decorate
 	end
 
 	def create
