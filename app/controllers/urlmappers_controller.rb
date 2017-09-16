@@ -15,21 +15,30 @@ class UrlmappersController < ApplicationController
 	end
 
 	def create
-		@urlmapper = Urlmapper.new(post_params)
-		@urlmapper.tinyurl = tinify(post_params[:url])
-		respond_to do |format|
-		  if @urlmapper.save
-		    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
-		  else
-		    format.html { render :new }
-		  end
+		@urlmapper = Urlmapper.where(:url =>post_params[:url]).first
+		if @urlmapper.blank?
+			@urlmapper = Urlmapper.new(post_params)
+			@urlmapper.tinyurl = tinify(post_params[:url])
+			@urlmapper.visit_count = 1
+			respond_to do |format|
+			  if @urlmapper.save
+			    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
+			  else
+			    format.html { render :new }
+			  end
+			end
+		else
+			@urlmapper.increment!(:visit_count, 1)
+			respond_to do |format|
+			    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
+			end
 		end
 	end
 
 	private
 
 	def post_params
-	params.require(:urlmapper).permit(:url)
+		params.require(:urlmapper).permit(:url)
 	end
 
 	def tinify(url)
