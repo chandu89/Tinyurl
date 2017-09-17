@@ -6,6 +6,8 @@ Here I have added a URL minified algo: One tinify URL method is written.
  	1. Bootstrap to change the UI
  	2. Decorator to work with URLmapper object using draper gem
  	3. Top 100 sites are coming based on visit_count 
+ 	4. Url validation is almost same as bitly which will not verify all http regex but only extensions and extensions are widely used ones only eg. .com
+
  	
  Some changes which i can  do but due to lack of time i won't
  If you'll check my commit its a single day built in app.
