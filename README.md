@@ -12,7 +12,7 @@ Here I have added a URL minified algo: One tinify URL method is written.
  Some changes which i can  do but due to lack of time i won't
  If you'll check my commit its a single day built in app.
 
- Suggested improvment
+ Suggested improvment:
 
  	1. Redis cache to fast showing 100 sites (Board) can be done by gem 'redis' & gem 'redis-namespace'
  	2. UI is needed many changes eg after URL creation we can show in the same page & UI changes needed in overall application.
