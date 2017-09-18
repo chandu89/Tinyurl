@@ -3,11 +3,9 @@ class Urlmapper < ActiveRecord::Base
 
 	# Only widely used extension are present and validation will not check full url
 	# validation is almost same as bitly
-	TYPES = %w{ de edu org in com int gov mil de}
   def url_validator
-  	url_extension = self.url.split(".").last
-
-    unless TYPES.include? url_extension
+    uri = URI.parse(self.url)
+    unless uri.is_a?(URI::HTTP) && !uri.host.nil?
       errors.add(:url, "url not valid")
     end
   end
