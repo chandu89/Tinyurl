@@ -2,8 +2,11 @@
 	<ul class="list-group col-md-10">
 		<%@urlmappers.each do |urlmapper|%>
 			  <li class="list-group-item">
-			  	<%= urlmapper.url%>
-			  	<span class="badge"><%= urlmapper.visit_count %></span>
+			  	<div class="row">
+				  	<div class="col-md-6" style="word-wrap: break-word;"><%= urlmapper.url %></div>
+				  	<div class="col-md-3"> <a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></div>
+				  	<div class="col-md-1 pull-right"><span class="badge"><%= urlmapper.visit_count %></span></div>
+				</div>
 			  </li>
 		<%end%>
 	</ul>
