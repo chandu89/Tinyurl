@@ -38,7 +38,7 @@ class UrlmappersController < ApplicationController
 	def redirected_site
 		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
 		url = urlmapper.url
-		redirect_to url_redirect url
+		redirect_to url
 	end
 
 	private
