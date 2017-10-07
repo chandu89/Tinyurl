@@ -1,8 +1,11 @@
 # Tinyurl
-Here I have added a URL minified algo: One tinify URL method is written. 
+	This is the project where you can grab the test of different websites which are already popular to shortening URL.
+	e.g [Bitly](https://bitly.com/), [google](https://goo.gl/) and [tinyUrl](https://tinyurl.com/)
 
-Markdown:
-[Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
+
+Here I tried to simplfy the Algo which actually help to short the URL 
+
+	[Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
 
 Implemented Changes
 
