@@ -1,7 +1,7 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		@urlmappers = Urlmapper.order(visit_count: :desc).limit(100)
+		@urlmappers = Urlmapper.order(visit_count: :desc).page(params[:page]).per(7)
 		render :layout => false
 	end
 

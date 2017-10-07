@@ -1,16 +1,14 @@
 <div class="container-fluid">
-	<div class="col-md-6">
+	<h1> </h1>
+	<div class="col-md-6 align-div">
 		<div class="row">
-			<h3>New Tinify Page</h3>
+			<h4>Enter your URL to shortening url</h4>
 		</div>
 		<div class="row">
 			<%= render 'form' %>
 		</div>
 	</div>
-	<div class="col-md-6" id="top-sites">
-		<%#= render :url=>"/urlmappers", :remote => true %>
-		<%#= link_to 'Top 100 Sites', urlmappers_path %>
-	</div>
+	<div class="col-md-6" id="top-sites"></div>
 </div>
 <script type="text/javascript">
 	$.ajax({
