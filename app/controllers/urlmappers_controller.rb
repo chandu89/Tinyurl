@@ -2,6 +2,7 @@ class UrlmappersController < ApplicationController
 
 	def index
 		@urlmappers = Urlmapper.order(visit_count: :desc).limit(100)
+		render :layout => false
 	end
 
 	def new

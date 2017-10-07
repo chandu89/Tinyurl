@@ -1,14 +1,21 @@
-<div class="container">
-	<ul class="list-group col-md-10">
-		<%@urlmappers.each do |urlmapper|%>
-			  <li class="list-group-item">
-			  	<div class="row">
-				  	<div class="col-md-6" style="word-wrap: break-word;"><%= urlmapper.url %></div>
-				  	<div class="col-md-3"> <a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></div>
-				  	<div class="col-md-1 pull-right"><span class="badge"><%= urlmapper.visit_count %></span></div>
-				</div>
-			  </li>
+
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Original Url</th>
+      <th>Shorted Url</th>
+      <th>Visit Count</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<%@urlmappers.each_with_index do |urlmapper,ind|%>
+	    <tr>
+	      <th scope="row"><%= (ind+1)%></th>
+	      <td style="word-wrap: break-word;"><%= urlmapper.url %></td>
+	      <td><a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></td>
+	      <td><span class="badge"><%= urlmapper.visit_count %></span></td>
+	    </tr>
 		<%end%>
-	</ul>
-	<%= link_to 'Back', new_urlmapper_path %>
-</div>
+	</tbody>
+</table>
