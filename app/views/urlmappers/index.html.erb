@@ -1,18 +1,16 @@
-<h2>Top 10 Sites</h2>
+<h2>Top 10 Visited Sites</h2>
 <div class="table-responsive">
   <table  class="table table-bordered table-hover" style="table-layout:fixed;">
     <thead>
       <tr>
-      	<th class="text-center"></th>
-        <th  class="text-center">Original Url</th>
-	      <th  class="text-center">Shorted Url</th>
-	      <th  class="text-center">Visit Count</th>
+        <th  class="center">Original Url</th>
+	      <th  class="center">Shorted Url</th>
+	      <th  class="center">Visit Count</th>
       </tr>
     </thead>
     <tbody>
     	<%@urlmappers.each_with_index do |urlmapper,ind|%>
         <tr style="word-wrap:break-word;">
-        	<th scope="row"><%= (ind+1)%></th>
           <td><%= urlmapper.url %></td>
           <td><a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></td>
           <td><span class="badge text-center"><%= urlmapper.visit_count %></span></td>

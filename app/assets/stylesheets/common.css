@@ -1,4 +1,5 @@
-tr,h2 {
+tr,h2,td, .center{
     text-align:center; 
-    vertical-align:middle;
+    vertical-align:middle !important;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
