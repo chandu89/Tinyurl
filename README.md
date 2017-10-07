@@ -2,11 +2,11 @@
 This is the project where you can grab the test of different websites which are already popular to shortening URL.
 e.g [Bitly](https://bitly.com/), [google](https://goo.gl/) and [tinyUrl](https://tinyurl.com/)
 
-Here I tried to simplfy the Algo which actually help to short the URL 
+*Here I tried to simplfy the Algo which actually help to short the URL* 
 
 [Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
 
-Implemented Changes
+**Implemented Changes**
 
  	1. Bootstrap to change the UI
  	2. Decorator to work with URLmapper object using draper gem
@@ -15,10 +15,10 @@ Implemented Changes
  	5. MemCache is implemented to fast showing 100 sites (Board) using dalli gem
  	6. pagination is implemented by gem 'kaminari'
  	
- Some changes which i can  do but due to lack of time i won't
- If you'll check my commit its a single day built in app.
+ *Some changes which i can  do but due to lack of time i won't
+ If you'll check my commit its a single day built in app.*
 
- Improvment Area:
+ **Improvment Area:**
 
  	1. UI change needed
  	2. Deployment of heroku done but caching cant be added because i am using free version where i cant use memcache
