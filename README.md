@@ -3,7 +3,8 @@ Here I have added a URL minified algo: One tinify URL method is written.
 
 Markdown:
 [Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
- Implemented Changes
+
+Implemented Changes
 
  	1. Bootstrap to change the UI
  	2. Decorator to work with URLmapper object using draper gem
