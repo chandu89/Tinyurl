@@ -38,8 +38,7 @@ class UrlmappersController < ApplicationController
 	# Its redirect from shorted URL to original site eg abc-> google.com
 	def redirected_site
 		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
-		url = urlmapper.url
-		redirect_to url_redirect url
+		redirect_to urlmapper.url_redirect
 	end
 
 	private
@@ -55,11 +54,6 @@ class UrlmappersController < ApplicationController
 		tiny = hash_url.reverse.split("").map(&:to_i).uniq.join("").to_i.to_s(36)
 	end
 
-	# adding if not http or https present in your URL 
-	# Though its not needed but extra protection i added
-	# you can simply return URL it will open
-	def url_redirect(url)
-		(url.include?("http://") || url.include?("https://") ? url : "http://"+url)
-	end
+	
 
 end

@@ -9,4 +9,12 @@ class Urlmapper < ActiveRecord::Base
       errors.add(:url, "url not valid")
     end
   end
+
+	# adding if not http or https present in your URL 
+	# Though its not needed but extra protection i added
+	# you can simply return URL it will open
+  def url_redirect
+  	url = self.url
+  	(url.include?("http://") || url.include?("https://") ? url : "http://"+url)
+  end
 end
