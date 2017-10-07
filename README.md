@@ -2,7 +2,7 @@
 Here I have added a URL minified algo: One tinify URL method is written. 
 
 Markdown:
-[a Demo_Url] https://stormy-cove-10376.herokuapp.com/
+[Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
  Implemented Changes
 
  	1. Bootstrap to change the UI
