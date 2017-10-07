@@ -2,6 +2,7 @@ tr,h2,h4,td, .center{
     text-align:center; 
     vertical-align:middle !important;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    word-wrap:break-word !important;
 }
 a{
 	cursor: pointer;

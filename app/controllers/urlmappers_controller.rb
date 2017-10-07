@@ -1,7 +1,7 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		@urlmappers = Urlmapper.order(visit_count: :desc).page(params[:page]).per(7)
+		@urlmappers = Urlmapper.order(visit_count: :desc).page(params[:page]).per(6)
 		render :layout => false
 	end
 
@@ -22,7 +22,7 @@ class UrlmappersController < ApplicationController
 			@urlmapper.visit_count = 1
 			respond_to do |format|
 			  if @urlmapper.save
-			    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
+			    format.js
 			  else
 			    format.html { render :new }
 			  end
@@ -30,7 +30,7 @@ class UrlmappersController < ApplicationController
 		else
 			@urlmapper.increment!(:visit_count, 1)
 			respond_to do |format|
-			    format.html { redirect_to @urlmapper, notice: 'new was successfully created.' }
+			    format.js 
 			end
 		end
 	end

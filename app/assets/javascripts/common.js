@@ -8,3 +8,12 @@ function changePage(url){
     	}
 	});
 }
+$(document).ready(function () {
+	changePage("/urlmappers");
+});
+function addTopSites(){
+	changePage("/urlmappers");
+}
+function refreshTopSites(){
+	addTopSites();
+}

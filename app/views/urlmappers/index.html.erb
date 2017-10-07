@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     	<%@urlmappers.each_with_index do |urlmapper,ind|%>
-        <tr style="word-wrap:break-word;">
+        <tr>
           <td><%= urlmapper.url %></td>
           <td><a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></td>
           <td><span class="badge text-center"><%= urlmapper.visit_count %></span></td>

@@ -7,16 +7,9 @@
 		<div class="row">
 			<%= render 'form' %>
 		</div>
+		<br/>
+		<div class="row" id="shortenedurl"></div>
 	</div>
 	<div class="col-md-6" id="top-sites"></div>
 </div>
-<script type="text/javascript">
-	$.ajax({
-	    url: "/urlmappers",
-	    cache: false,
-	    success: function(html){
-	      $("#top-sites").append(html);
-	    }
-	});
-</script>
 
