@@ -1,7 +1,9 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		@urlmappers = Urlmapper.order(visit_count: :desc).page(params[:page]).per(6)
+		@urlmappers =Rails.cache.fetch("urmapper_index_cache/#{params[:page]}", race_condition_ttl: 10, expires_in: 1.hour) do
+          	Urlmapper.order(visit_count: :desc).page(params[:page]).per(6)
+      	end
 		render :layout => false
 	end
 
@@ -53,7 +55,4 @@ class UrlmappersController < ApplicationController
 		hash_url = Digest::SHA1.hexdigest(url)
 		tiny = hash_url.reverse.split("").map(&:to_i).uniq.join("").to_i.to_s(36)
 	end
-
-	
-
 end
