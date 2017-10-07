@@ -1,5 +1,6 @@
 class Urlmapper < ActiveRecord::Base
 	validate :url_validator
+  after_save :flush_cache
 
 	# Only widely used extension are present and validation will not check full url
 	# validation is almost same as bitly
@@ -16,5 +17,9 @@ class Urlmapper < ActiveRecord::Base
   def url_redirect
   	url = self.url
   	(url.include?("http://") || url.include?("https://") ? url : "http://"+url)
+  end
+
+  def flush_cache
+    Rails.cache.delete("urlmapper_index_cache")
   end
 end

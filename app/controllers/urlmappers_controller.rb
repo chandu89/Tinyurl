@@ -1,7 +1,7 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		@urlmappers = Rails.cache.fetch("urmapper_index_cache", race_condition_ttl: 10, expires_in: 1.hour) do
+		@urlmappers = Rails.cache.fetch("urlmapper_index_cache", race_condition_ttl: 10, expires_in: 1.hour) do
            Urlmapper.order(visit_count: :desc).all
       	end
 
