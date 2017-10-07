@@ -39,7 +39,7 @@ class UrlmappersController < ApplicationController
 	def redirected_site
 		urlmapper = Urlmapper.find_by_tinyurl(params[:tinyurl])
 		url = urlmapper.url
-		redirect_to url
+		redirect_to url_redirect url
 	end
 
 	private
@@ -59,7 +59,7 @@ class UrlmappersController < ApplicationController
 	# Though its not needed but extra protection i added
 	# you can simply return URL it will open
 	def url_redirect(url)
-		(url.include?("htpp://") || url.include?("htpps://") ? url : "https://"+url)
+		(url.include?("htpp://") || url.include?("htpps://") ? url : "http://"+url)
 	end
 
 end
