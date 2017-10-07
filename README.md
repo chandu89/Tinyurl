@@ -15,7 +15,7 @@ e.g [Bitly](https://bitly.com/), [google](https://goo.gl/) and [tinyUrl](https:/
  	5. MemCache is implemented to fast showing 100 sites (Board) using dalli gem.
  	6. pagination is implemented by gem 'kaminari'.
  	
- *See there is always scope of improvement what i feel in any application irrespective of popularity whether its Facebook Or Google. So definately in my site also numerous improvment areas are there so i am adding couple of them.*:simple_smile:
+ *See there is always scope of improvement what i feel in any application irrespective of popularity whether its Facebook Or Google. So definately in my site also numerous improvment areas are there so i am adding couple of them.*:blush:
 
 
 
