@@ -1,9 +1,11 @@
 class UrlmappersController < ApplicationController
 
 	def index
-		@urlmappers =Rails.cache.fetch("urmapper_index_cache/#{params[:page]}", race_condition_ttl: 10, expires_in: 1.hour) do
-          	Urlmapper.order(visit_count: :desc).page(params[:page]).per(6)
+		@urlmappers = Rails.cache.fetch("urmapper_index_cache", race_condition_ttl: 10, expires_in: 1.hour) do
+           Urlmapper.order(visit_count: :desc).all
       	end
+
+      	@urlmappers = @urlmappers.page(params[:page]).per(6)
 		render :layout => false
 	end
 
