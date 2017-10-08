@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # It returns host URl
   def host_uri
-    Rails.env.production? ? 'https://stormy-cove-10376.herokuapp.com/' : root_url
+    Rails.env.production? ? 'http://www.tinmini.com/' : root_url
   end
 
 end
