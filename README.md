@@ -4,7 +4,8 @@ e.g [Bitly](https://bitly.com/), [google](https://goo.gl/) and [tinyUrl](https:/
 
 *Here I tried to simplfy the Algo which actually help to short the URL.* 
 
-[Heroku Demo Url](https://stormy-cove-10376.herokuapp.com/)
+Site is deployed in Heroku - and - Domain is registered with godaddy
+[Demo Sites](http://www.tinmini.com/)
 
 **Implemented Changes**
 
