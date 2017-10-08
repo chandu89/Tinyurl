@@ -1,3 +1,14 @@
 
-$("#shortenedurl").empty().append('<a target="_blank" href="<%= host_uri+@urlmapper.tinyurl%>"><%= host_uri+@urlmapper.tinyurl%></a>')
+var errordiv = $("#error_explanation");
+<% if @urlmapper.errors.any? %>
+	  var h2 = '<h2><%= pluralize(@urlmapper.errors.count, "error") %> prohibited this post from being saved:</h2>'
+	  errordiv.append(h2);
+	  <% @urlmapper.errors.full_messages.each do |message| %>
+	  	errordiv.append('<ul><li>"<%= message %>"</li></ul>')
+	  <% end %>
+<%else%>
+	errordiv.empty();
+	$("#shortenedurl").empty().append('<a target="_blank" href="<%= host_uri+@urlmapper.tinyurl%>"><%= host_uri+@urlmapper.tinyurl%></a>')
 refreshTopSites();
+
+<% end %>

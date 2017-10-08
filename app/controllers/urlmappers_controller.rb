@@ -28,7 +28,7 @@ class UrlmappersController < ApplicationController
 			  if @urlmapper.save
 			    format.js
 			  else
-			    format.html { render :new }
+			    format.js
 			  end
 			end
 		else
