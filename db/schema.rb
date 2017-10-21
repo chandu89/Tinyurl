@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021135018) do
+ActiveRecord::Schema.define(version: 20171021151208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,12 @@ ActiveRecord::Schema.define(version: 20171021135018) do
 
   create_table "user_ips", force: :cascade do |t|
     t.string   "remote_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "country"
+    t.string   "country_code2"
+    t.string   "country_code3"
+    t.string   "continent_code"
   end
 
 end

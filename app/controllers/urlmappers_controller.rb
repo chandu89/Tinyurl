@@ -1,7 +1,8 @@
 class UrlmappersController < ApplicationController
-	before_action :set_ip, only: [:index]
+	before_action :set_remote_ip
 
 	def index
+
 		@urlmappers = Rails.cache.fetch("urlmapper_index_cache", race_condition_ttl: 10, expires_in: 1.hour) do
            Urlmapper.order(visit_count: :desc).all
       	end
@@ -65,10 +66,15 @@ class UrlmappersController < ApplicationController
 		remote_ip = request.remote_ip 
 		geoip = GeoIP.new("#{Rails.root}/db/GeoIP.dat") 
 		if remote_ip != "127.0.0.1"
-		  location_location = geoip.country(remote_ip)
-		  if location_location != nil   
-		    @@user_ip ||= UserIp.create(:remote_ip=> remote_ip, :country=> location_location.country_name)
+		  location = geoip.country(remote_ip)
+		  if location != nil   
+		    @@user_remote_ip ||= UserIp.create(:remote_ip=> remote_ip, :country=> location.country_name, :country_code2=> location.country_code2, :country_code3=> location.country_code3, :continent_code=> location.continent_code)
 		  end
 		end
+		@@user_remote_ip
 	end
+	def set_remote_ip
+		@user_ip = set_ip
+	end
+
 end
