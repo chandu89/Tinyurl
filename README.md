@@ -15,6 +15,7 @@ Site is deployed in Heroku - and - Domain is registered with godaddy
  	4. Url validation is almost same as bitly which will not verify all http regex but only extensions and extensions are widely used ones only eg. .com
  	5. MemCache is implemented to fast showing 100 sites (Board) using dalli gem.
  	6. pagination is implemented by gem 'kaminari'.
+ 	7. Added geo IP detection for site visitor and flag will show for their country.
  	
  *See there is always scope of improvement what i feel in any application irrespective of popularity whether its Facebook Or Google. So definately in my site also numerous improvment areas are there so i am adding couple of them.*:blush:
 
