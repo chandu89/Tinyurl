@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'draper'
 gem 'kaminari'
 gem 'dalli'
+gem 'geoip'
 
 group :development, :test do
   gem 'byebug'
