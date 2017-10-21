@@ -7,7 +7,7 @@ class Urlmapper < ActiveRecord::Base
   def url_validator
     uri = URI.parse(self.url)
     unless uri.is_a?(URI::HTTP) && !uri.host.nil?
-      errors.add(:url, "url not valid")
+      errors.add(:url, " not valid")
     end
   end
 

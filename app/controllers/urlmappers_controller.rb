@@ -1,4 +1,5 @@
 class UrlmappersController < ApplicationController
+	before_action :set_ip, only: [:index]
 
 	def index
 		@urlmappers = Rails.cache.fetch("urlmapper_index_cache", race_condition_ttl: 10, expires_in: 1.hour) do
@@ -56,5 +57,10 @@ class UrlmappersController < ApplicationController
 	def tinify(url)
 		hash_url = Digest::SHA1.hexdigest(url)
 		tiny = hash_url.reverse.split("").map(&:to_i).uniq.join("").to_i.to_s(36)
+	end
+
+	# setting remote IP
+	def set_ip
+		@@remote_ip ||= UserIp.create(:remote_ip=> request.remote_ip)
 	end
 end

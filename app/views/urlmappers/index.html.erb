@@ -1,25 +1,26 @@
-
-<h4>Top 100 Visited Sites</h4>
-<div class="table-responsive">
-  <table  class="table table-bordered table-hover" style="table-layout:fixed;">
-    <thead>
-      <tr>
-        <th  class="center">Original Url</th>
-	      <th  class="center">shortened Url</th>
-	      <th  class="center">Visit Count</th>
-      </tr>
-    </thead>
-    <tbody>
-    	<%@urlmappers.each_with_index do |urlmapper,ind|%>
+<%unless @urlmappers.blank?%>
+  <h4>Top 100 Visited Sites</h4>
+  <div class="table-responsive">
+    <table  class="table table-bordered table-hover" style="table-layout:fixed;">
+      <thead>
         <tr>
-          <td><%= urlmapper.url %></td>
-          <td><a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></td>
-          <td><span class="badge text-center"><%= urlmapper.visit_count %></span></td>
+          <th  class="center">Original Url</th>
+  	      <th  class="center">shortened Url</th>
+  	      <th  class="center">Visit Count</th>
         </tr>
-      <%end%>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+      	<%@urlmappers.each_with_index do |urlmapper,ind|%>
+          <tr>
+            <td><%= urlmapper.url %></td>
+            <td><a target="_blank" href="<%= host_uri+urlmapper.tinyurl%>"><%= host_uri+urlmapper.tinyurl%></a></td>
+            <td><span class="badge text-center"><%= urlmapper.visit_count %></span></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
 
 
-<%= paginate @urlmappers %>
+  <%= paginate @urlmappers %>
+<%end%>
