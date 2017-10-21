@@ -2,9 +2,8 @@
 	<div class="col-md-6 align-div">
 		<div class="row">
 			<%unless @user_ip.nil?%>
-
+				<strong>You belongs to great country:&nbsp;<%=  @user_ip.country%></strong>
 				<img class="flag flag-<%= @user_ip.country_code2.downcase%>"  />
-				<%=  @user_ip.country%>
 			<% end %>
 			<h4>Enter your URL to shortening url</h4>
 		</div>
