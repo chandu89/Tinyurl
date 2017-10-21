@@ -65,7 +65,7 @@ class UrlmappersController < ApplicationController
 	def set_ip
 		remote_ip = request.remote_ip 
 		geoip = GeoIP.new("#{Rails.root}/db/GeoIP.dat") 
-		if remote_ip != "127.0.0.1"
+		if remote_ip != "127.0.0.1" || true
 		  location = geoip.country(remote_ip)
 		  if location != nil   
 		    @@user_remote_ip ||= UserIp.create(:remote_ip=> remote_ip, :country=> location.country_name, :country_code2=> location.country_code2, :country_code3=> location.country_code3, :continent_code=> location.continent_code)
