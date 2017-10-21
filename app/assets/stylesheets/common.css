@@ -7,3 +7,7 @@ tr,h2,h4,td, .center{
 a{
 	cursor: pointer;
 }
+.text-css{
+	margin-left: 30px;
+	color: red;
+}

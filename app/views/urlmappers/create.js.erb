@@ -4,7 +4,7 @@ var errordiv = $("#error_explanation");
 	  var h2 = '<h2><%= pluralize(@urlmapper.errors.count, "error") %> prohibited this post from being saved:</h2>'
 	  errordiv.append(h2);
 	  <% @urlmapper.errors.full_messages.each do |message| %>
-	  	errordiv.append('<ul><li>"<%= message %>"</li></ul>')
+	  	errordiv.append('<p class="text-css"><%= message %></p>')
 	  <% end %>
 <%else%>
 	errordiv.empty();
