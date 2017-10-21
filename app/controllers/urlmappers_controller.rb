@@ -67,7 +67,7 @@ class UrlmappersController < ApplicationController
 		if remote_ip != "127.0.0.1"
 		  location_location = geoip.country(remote_ip)
 		  if location_location != nil   
-		    @@user_ip ||= UserIp.create(:remote_ip=> remote_ip, :country=> geoip)
+		    @@user_ip ||= UserIp.create(:remote_ip=> remote_ip, :country=> location_location[2])
 		  end
 		end
 	end
